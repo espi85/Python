@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>NBA Scraper</title>
+</head>
+<body>
+    <h1>Scraper de Jugadores NBA</h1>
+
+    <form action="/scrape">
+        <button type="submit">Obtener jugadores</button>
+    </form>
+
+    {% if done %}
+        <h2>Jugadores encontrados:</h2>
+        <ul>
+            {% for p in players %}
+                <li>{{ p }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/download">Descargar Excel</a>
+    {% endif %}
+</body>
+</html>
